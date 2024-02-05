@@ -12,8 +12,8 @@ function App() {
     <>
       <section className='mx-auto mt-5 w-50 text-center bg-light rounded-3 h-auto p-3'>
         <Encabezado></Encabezado>
-        <TextField></TextField>
-        <Lista></Lista>
+        <TextField tareas={tareas} setTareas={setTareas}></TextField>
+        <Lista tareas={tareas} setTareas={setTareas}></Lista>
       </section>
     </>
   )
