@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const TextField = () => {
+
+const TextField = ({ tareas, setTareas }) => {
+
+    const[tarea, setTarea] = useState('')
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setTareas([...tareas, tarea]);
+    }
+
     return (
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="mb-3 w-75 mx-auto">
-                    <label for="inputTarea" className="form-label">Ingresa tu tarea</label>
-                    <input type="text" className="form-control" id="inputTarea" placeholder='Presiona enter para agregar'/>
+                    <label htmlFor="inputTarea" className="form-label">Ingresa tu tarea</label>
+                    <input type="text" className="form-control" id="inputTarea" placeholder='Presiona enter para agregar' onChange={(e)=>setTarea(e.target.value)}/>
                 </div>
                 <button type="submit" className="btn btn-dark">+ Agregar</button>
             </form>

@@ -2,8 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Encabezado from './components/Encabezado'
 import Lista from './components/Lista'
 import TextField from './components/TextField'
+import { useState } from 'react'
 
 function App() {
+
+  const[tareas, setTareas] = useState([])
 
   return (
     <>
